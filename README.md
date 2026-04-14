@@ -58,7 +58,7 @@ pip install biopython tiktoken
 
 ## Credentials Setup
 
-**Never hardcode credentials.** The tool requires two environment variables and will fail loudly at startup if either is missing.
+**Never hardcode credentials.** The tool requires two environment vsomeables and will fail loudly at startup if either is missing.
 
 ```bash
 export ENTREZ_EMAIL=you@example.com
@@ -177,10 +177,10 @@ python pubmed_fetcher.py \
 **Fetch all genomics papers from a specific institution:**
 ```bash
 python pubmed_fetcher.py \
-  --query '"Genomics"[MeSH] AND "Agharkar Research Institute"[AD]' \
+  --query '"Genomics"[MeSH] AND "Some Research Institute"[AD]' \
   --years 10 \
   --max-results 500 \
-  --output-dir ./ari_genomics
+  --output-dir ./some_genomics
 ```
 
 **Large historical fetch with bigger batches:**
@@ -197,7 +197,7 @@ python pubmed_fetcher.py \
 
 ## Security Notes
 
-- Credentials are read exclusively from environment variables. The tool raises `EnvironmentError` at startup if either is unset — there are no hardcoded fallbacks.
+- Credentials are read exclusively from environment vsomeables. The tool raises `EnvironmentError` at startup if either is unset — there are no hardcoded fallbacks.
 - Do not commit `.env` files or shell profiles containing your API key to version control. Add them to `.gitignore`.
 - If you suspect your API key has been exposed, rotate it immediately at https://www.ncbi.nlm.nih.gov/account/.
 
@@ -205,8 +205,8 @@ python pubmed_fetcher.py \
 
 ## Troubleshooting
 
-**`EnvironmentError: Required environment variable 'ENTREZ_EMAIL' is not set`**
-Export the variable in your shell before running — see [Credentials Setup](#credentials-setup).
+**`EnvironmentError: Required environment vsomeable 'ENTREZ_EMAIL' is not set`**
+Export the vsomeable in your shell before running — see [Credentials Setup](#credentials-setup).
 
 **`WARNING: PubMed has X total results but only Y were requested`**
 Increase `--max-results`. Note the hard ceiling is 9,999 per NCBI's API.
